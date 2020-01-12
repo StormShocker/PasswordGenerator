@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0"
+        name="viewport">
+  <meta content="ie=edge"
+        http-equiv="X-UA-Compatible">
+  <title>index</title>
+  <link crossorigin="anonymous"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        rel="stylesheet">
+  <link href="/style.css"
+        rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Password Generator</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Generate a Password</h2><input class="form-control"
+             id="password"
+             placeholder="Your secure password"
+             readonly
+             type="text">
+        <div class="form-check">
+          <input class="form-check-input"
+               id="special"
+               type="checkbox"
+               value=""> <label class="form-check-label"
+               for="defaultCheck1">Use special characters?</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input"
+               id="numeric"
+               type="checkbox"
+               value=""> <label class="form-check-label"
+               for="defaultCheck1">Use numeric characters?</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input"
+               id="lowercase"
+               type="checkbox"
+               value=""> <label class="form-check-label"
+               for="defaultCheck1">Use lowercase letters?</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input"
+               id="uppercase"
+               type="checkbox"
+               value=""> <label class="form-check-label"
+               for="defaultCheck1">Use uppercase letters?</label>
+        </div>
+      </div>
+    </div><button class="btn btn-primary btn-lg"
+         id="generate"
+         type="button">Generate password</button>
+  </div>
+  <script src="/script.js"
+        type="application/javascript"></script>
+</body>
+</html>
