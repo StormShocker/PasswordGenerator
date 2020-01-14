@@ -14,15 +14,42 @@ var randomFunc = {
     numeric: getRandomNumeric,
     special: getRandomSpecial
 };
-
+// Generate event listen
 buttonEl.addEventListener('click', () =>{
     var hasLower = lowercaseEl.checked;
     var hasUpper = uppercaseEl.checked;
     var hasNumeric = numericEl.checked;
     var hasSpecial = specialEl.checked;
 
-   resultEl.innerText = generatePassword(hasSpecial, hasNumeric, hasLower, hasUpper);
+    generatePassword(hasSpecial, hasNumeric, hasLower, hasUpper);
 })
+
+function generatePassword(lowercase, uppercase, numeric, special) {
+    let generatesPassword = '';
+
+    var typesCount = lowercase + uppercase + numeric + special;
+
+    //console.log('typesCount: ', typesCount)
+
+    var typeArr = ({lowercase}, {uppercase}, {numeric}, {special})
+
+    //console.log('typesArr: ', typeArr);
+
+    if(typesCount === 0) {
+        return 'Please input your criteria for the password';
+    }
+
+    for(let i = 0; i < length; i += typesCount) {
+        typeArr.forEach(type => {
+            var funcName = Object.keys(type)[0];
+            //console.log('funcName', funcName);
+
+            generatedPassword += randomFunc[funcName]();
+        });
+    }
+
+    //console.log(generatedPassword);
+}
 
 // Generator Functions
 
