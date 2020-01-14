@@ -1,12 +1,12 @@
 // DOM elements
-var button = document.querySelector('button#generate');
-var result = document.querySelector('#result');
-var length = document.querySelector('#length');
-var special = document.querySelector('#special');
-var numeric = document.querySelector('#numeric');
-var lowercase = document.querySelector('#lowercase');
-var uppercase = document.querySelector('#uppercase');
-var clipboard = document.querySelector('#clipboard')
+var buttonEl = document.querySelector('button#generate');
+var resultEl = document.querySelector('#result');
+var lengthEl = document.querySelector('#length');
+var specialEl = document.querySelector('#special');
+var numericEl = document.querySelector('#numeric');
+var lowercaseEl = document.querySelector('#lowercase');
+var uppercaseEl = document.querySelector('#uppercase');
+var clipboardEl = document.querySelector('#clipboard')
 
 var randomFunc = {
     lowercase: getRandomLower,
@@ -14,6 +14,15 @@ var randomFunc = {
     numeric: getRandomNumeric,
     special: getRandomSpecial
 };
+
+buttonEl.addEventListener('click', () =>{
+    var hasLower = lowercaseEl.checked;
+    var hasUpper = uppercaseEl.checked;
+    var hasNumeric = numericEl.checked;
+    var hasSpecial = specialEl.checked;
+
+   resultEl.innerText = generatePassword(hasSpecial, hasNumeric, hasLower, hasUpper);
+})
 
 // Generator Functions
 
